@@ -3,8 +3,8 @@ import React from 'react';
 const LoginCliente = () => {
   return (
     <div className="container-login-cliente">
-      <div className="login-imagem">
-        <img src="/img/ImagemCliente.jpg" alt="Imagem agrícola" />
+      <div className="login-imagem cliente">
+        {/* A imagem de fundo será controlada via CSS */}
       </div>
       <div className="login-form-cliente">
         <img src="/img/LogoClara.png" alt="Logo AgroConecta" className="logo-cliente" />
