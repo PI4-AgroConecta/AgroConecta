@@ -270,3 +270,15 @@ input.agricultor-placeholder::placeholder {
     padding: 40px 20px;
   }
 }
+.links-cliente a,
+.links-agricultor a,
+.links-cliente a:hover,
+.links-agricultor a:hover,
+.links-cliente a:visited,
+.links-agricultor a:visited,
+.links-cliente a:active,
+.links-agricultor a:active,
+.links-cliente a:focus,
+.links-agricultor a:focus {
+  text-decoration: none !important;
+}
