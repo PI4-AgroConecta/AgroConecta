@@ -3,24 +3,32 @@ import React from 'react';
 const LoginCliente = () => {
   return (
     <div className="container-login-cliente">
-      <div className="login-imagem cliente">
-        {/* A imagem de fundo será controlada via CSS */}
-      </div>
+      <div className="login-imagem cliente"></div>
       <div className="login-form-cliente">
         <img src="/img/LogoClara.png" alt="Logo AgroConecta" className="logo-cliente" />
         <h1 className="titulo-cliente">LOGIN</h1>
-        <form>
+        <form className="form-cliente">
           <label htmlFor="email-cliente">Email</label>
-          <input type="email" id="email-cliente" placeholder="Digite seu e-mail aqui" />
+          <input
+            type="email"
+            id="email-cliente"
+            className="cliente-placeholder"
+            placeholder="Digite seu e-mail aqui"
+          />
           <label htmlFor="senha-cliente">Senha</label>
-          <input type="password" id="senha-cliente" placeholder="Digite sua senha aqui" />
+          <input
+            type="password"
+            id="senha-cliente"
+            className="cliente-placeholder"
+            placeholder="Digite sua senha aqui"
+          />
           <button type="submit" id="btn-cliente" disabled>ENTRAR</button>
-          <div className="links-acesso">
-            <a href="#">Esqueci minha senha</a>
-            <span>|</span>
-            <a href="#">Cadastre-se</a>
-          </div>
         </form>
+        <div className="links-cliente">
+          <a href="#">Cadastre-se</a>
+          <span>|</span>
+          <a href="#">Esqueci minha senha</a>
+        </div>
       </div>
     </div>
   );

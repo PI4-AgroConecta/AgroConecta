@@ -1,16 +1,29 @@
-/* Estilos gerais combinados de todas as páginas */
+/* Variáveis de cores */
+:root {
+  --cor-cliente-fundo: #283618;
+  --cor-cliente-texto: #FEFAE0;
+  --cor-agricultor-fundo: #FEFAE0;
+  --cor-agricultor-texto: #283618;
+  --input-bg: rgba(255,255,255,0.2);
+  --input-bg-focus: rgba(255,255,255,0.3);
+  
+  --box-shadow-default: 5px 5px 5px rgba(0,0,0,0.2);
+  --box-shadow-focus: 3px 3px 8px rgba(0,0,0,0.3);
+}
+
+/* Estilos gerais */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-body, html {
+html, body {
   height: 100%;
   font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
 }
 
-/* Estilo da tela inicial */
+/* Tela inicial */
 .home {
   display: flex;
   justify-content: center;
@@ -21,7 +34,6 @@ body, html {
   color: rgb(116, 61, 61);
 }
 
-/* Painéis para a tela inicial (Agricultor e Cliente) */
 .container {
   display: flex;
   width: 100%;
@@ -37,6 +49,12 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none; 
+}
+
+.panel:hover {
+  cursor: pointer;
+  opacity: 0.95;
 }
 
 .panel-left {
@@ -57,28 +75,28 @@ body, html {
 }
 
 .panel-left .overlay {
-  background-color: #FEFAE0;
+  background-color: var(--cor-agricultor-fundo);
 }
 
 .panel-right .overlay {
-  background-color: #283618;
+  background-color: var(--cor-cliente-fundo);
 }
 
 .content {
   position: relative;
   z-index: 2;
   text-align: center;
-  color: #1E1E1E;
+  color: var(--cor-agricultor-texto);
 }
-
 .panel-right .content {
-  color: #FEFAE0;
+  color: var(--cor-cliente-texto);
 }
 
 h2 {
   font-size: 36px;
   font-weight: 400;
   margin-top: 20px;
+  text-decoration: none; 
 }
 
 .icon {
@@ -90,183 +108,165 @@ h2 {
   border-radius: 0;
 }
 
-.panel:hover {
-  cursor: pointer;
-  opacity: 0.95;
-}
-
-/* Login Cliente */
-.container-login-cliente {
-  display: flex;
+/* Login */
+.container-login-cliente,
+.container-login-agricultor {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100vh;
+  display: flex;
 }
 
 .login-imagem {
   flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-/* Mudança do fundo da imagem de cliente */
-.login-imagem.cliente {
-  background-color: #283618; /* Cor de fundo para a área do Cliente */
-  background-image: url('/img/ImagemCliente.jpg'); /* Imagem de fundo do cliente */
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+}
+
+.login-imagem.cliente {
+  background-color: var(--cor-cliente-fundo);
+  background-image: url('/img/ImagemCliente.jpg');
 }
 
 .login-imagem.agricultor {
-  background-color: #FEFAE0; /* Cor de fundo para a área do Agricultor */
-  background-image: url('/img/SenhorAgricultor.jpeg'); /* Imagem de fundo do agricultor */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: var(--cor-agricultor-fundo);
+  background-image: url('/img/SenhorAgricultor.jpeg');
 }
 
-.login-imagem img {
-  width: 100%;
-  height: 10%;
-  object-fit: cover;
-  border-radius: 20px;
-}
-
-/* Formulários de login */
-.login-form-cliente {
+.login-form-cliente,
+.login-form-agricultor {
   flex: 1;
-  background-color: #283618;
   display: flex;
   flex-direction: column;
-  padding: 70px 40px;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
+  padding: 70px 40px;
 }
 
-.logo-cliente {
+.login-form-cliente {
+  background-color: var(--cor-cliente-fundo);
+  color: var(--cor-cliente-texto);
+}
+.login-form-agricultor {
+  background-color: var(--cor-agricultor-fundo);
+  color: var(--cor-agricultor-texto);
+}
+
+.logo-cliente,
+.logo-agricultor {
   width: 300px;
-  margin-bottom: 60px;
-}
-
-.titulo-cliente {
-  font-size: 36px;
-  font-weight: 400;
-  color: #FEFAE0;
   margin-bottom: 40px;
 }
 
-/* Login Agricultor */
-.container-login-agricultor {
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  flex-direction: row-reverse;
-}
-
-.login-form-agricultor {
-  flex: 1;
-  background-color: #FEFAE0;
-  display: flex;
-  flex-direction: column;
-  padding: 70px 40px;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.logo-agricultor {
-  width: 300px;
-  margin-bottom: 60px;
-}
-
+.titulo-cliente,
 .titulo-agricultor {
   font-size: 36px;
   font-weight: 400;
-  color: #283618;
   margin-bottom: 40px;
 }
+.titulo-cliente {
+  color: var(--cor-cliente-texto);
+}
+.titulo-agricultor {
+  color: var(--cor-agricultor-texto);
+}
 
-/* Formulários de login */
+/* Formulários */
 form {
   width: 100%;
   max-width: 400px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 
 label {
   font-size: 18px;
-  color: inherit;
 }
 
-/* Estilo do input com leve relevo */
 input {
   padding: 20px;
   font-size: 16px;
   border: none;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--input-bg);
   color: inherit;
   outline: none;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2); /* 👈 Relevo aplicado aqui */
-  transition: box-shadow 0.3s ease;
+  box-shadow: var(--box-shadow-default);
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
-
 input:focus {
-  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3); /* 👈 Um pouco mais forte no foco */
-  background-color: rgba(255, 255, 255, 0.3); /* 👈 Realce no foco */
+  background-color: var(--input-bg-focus);
+  box-shadow: var(--box-shadow-focus);
 }
 
-input::placeholder {
-  color: #0c0c0c;
+/* Individualizando a cor do placeholder por tipo de usuário */
+
+/* Para o cliente */
+input.cliente-placeholder::placeholder {
+  color: #FEFAE0; /* Cor do placeholder para inputs do cliente */
 }
 
-/* Botões de login */
-#btn-cliente {
-  padding: 16px;
-  font-size: 18px;
-  font-weight: 400;
-  background-color: #FEFAE0;
-  color: #283618;
-  border: none;
-  border-radius: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+/* Para o agricultor */
+input.agricultor-placeholder::placeholder {
+  color: #283618; /* Cor do placeholder para inputs do agricultor */
 }
 
+/* Botões */
+#btn-cliente,
 #btn-agricultor {
   padding: 16px;
   font-size: 18px;
   font-weight: 400;
-  background-color: #283618;
-  color: #FEFAE0;
   border: none;
   border-radius: 14px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+#btn-cliente {
+  background-color: var(--cor-cliente-texto);
+  color: var(--cor-cliente-fundo);
+}
+#btn-agricultor {
+  background-color: var(--cor-agricultor-texto);
+  color: var(--cor-agricultor-fundo);
   cursor: not-allowed;
   opacity: 0.8;
-  margin-top: 30px;
 }
 
-/* Links de acesso */
-.links-acesso {
-  margin-top: 20px;
-  text-align: center;
-  font-size: 14px;
-}
-
-.links-acesso a {
+/* Links */
+.links-cliente a,
+.links-agricultor a {
   color: inherit;
   text-decoration: none;
   margin: 0 8px;
   transition: color 0.3s;
 }
-
-.links-acesso a:hover {
+.links-cliente a:hover,
+.links-agricultor a:hover {
   color: #d4dbcc;
 }
-
-.links-acesso span {
+.links-cliente span,
+.links-agricultor span {
   color: #b0b0b0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container-login-cliente,
+  .container-login-agricultor {
+    flex-direction: column;
+  }
+  .login-imagem {
+    display: none;
+  }
+  .login-form-cliente,
+  .login-form-agricultor {
+    flex: none;
+    width: 100%;
+    height: 100vh;
+    padding: 40px 20px;
+  }
 }
