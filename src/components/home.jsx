@@ -1,27 +1,24 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import '../styles/global.css';
 
-const Home = () => {
-    const navigate = useNavigate();
-  
-    return (
-      <div className="container">
-        <div className="panel panel-left" onClick={() => navigate('/login-agricultor')}>
-          <div className="overlay"></div>
-          <div className="content">
-            <img className="icon" src="/img/Simbolo Agricultor.png" alt="Ícone Agricultor" />
-            <h2>QUERO VENDER</h2>
-          </div>
-        </div>
-        <div className="panel panel-right" onClick={() => navigate('/login-cliente')}>
-          <div className="overlay"></div>
-          <div className="content">
-            <img className="icon" src="/img/Simbolo Cliente.png" alt="Ícone Cliente" />
-            <h2>QUERO COMPRAR</h2>
-          </div>
-        </div>
+const TelaInicial = () => (
+  <div className="container">
+    <Link to="/login-agricultor" className="panel panel-left">
+      <div className="overlay" />
+      <div className="content">
+        <img className="icon" src="/img/Simbolo Agricultor.png" alt="Ícone Agricultor" />
+        <h2>QUERO VENDER</h2>
       </div>
-    );
-  };
-  
-export default Home;
+    </Link>
+    <Link to="/login-cliente" className="panel panel-right">
+      <div className="overlay" />
+      <div className="content">
+        <img className="icon" src="/img/Simbolo Cliente.png" alt="Ícone Cliente" />
+        <h2>QUERO COMPRAR</h2>
+      </div>
+    </Link>
+  </div>
+);
+
+export default TelaInicial;
