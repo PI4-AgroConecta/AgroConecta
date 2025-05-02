@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/global.css';
-
+import '../styles/Login.css';
 const TelaInicial = () => (
   <div className="container">
     <Link to="/login-agricultor" className="panel panel-left">

@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
-
+import '../styles/global.css';
 
 const TelaPrincipal = () => {
   useEffect(() => {
     
-    // Ativa o Owl Carousel quando o componente é montado
     if (window.$ && window.$('.owl-carousel').owlCarousel) {
       window.$('.owl-carousel').owlCarousel({
         loop: true,
