@@ -109,3 +109,14 @@
     font-size: 0.9rem;
   }
 }
+.icones-perfil {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.icone-perfil {
+  width: 100px;
+  height: 100px;
+}

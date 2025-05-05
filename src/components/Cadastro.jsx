@@ -1,14 +1,18 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Cadastro.css';
 
 const Cadastro = () => {
   const navigate = useNavigate();
+  const [perfilSelecionado, setPerfilSelecionado] = useState('cliente');
 
   const handleSubmit = event => {
     event.preventDefault();
     navigate('/'); 
+  };
+
+  const handlePerfilChange = event => {
+    setPerfilSelecionado(event.target.value);
   };
 
   return (
@@ -24,13 +28,28 @@ const Cadastro = () => {
           <input type="text" placeholder="Número da casa" className="cadastro-input" required />
 
           <label htmlFor="perfil" className="cadastro-label">
-            Você deseja se cadastrar como:
+          Você deseja se cadastrar como:
           </label>
-          <select id="perfil" className="cadastro-select">
+          <select
+            id="perfil"
+            className="cadastro-select"
+            value={perfilSelecionado}
+            onChange={handlePerfilChange}
+          >
             <option value="cliente">Cliente</option>
             <option value="agricultor">Agricultor</option>
             <option value="ambos">Ambos</option>
           </select>
+
+        
+          <div className="icones-perfil">
+            {(perfilSelecionado === 'cliente' || perfilSelecionado === 'ambos') && (
+              <img src="/img/SimboloClienteEscuro.png" alt="Ícone Cliente" className="icone-perfil" />
+            )}
+            {(perfilSelecionado === 'agricultor' || perfilSelecionado === 'ambos') && (
+              <img src="/img/SimboloAgricultorEscura.png" alt="Ícone Agricultor" className="icone-perfil" />
+            )}
+          </div>
 
           <button type="submit" className="cadastro-button">
             Cadastrar

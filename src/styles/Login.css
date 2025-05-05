@@ -281,3 +281,10 @@
   .links-agricultor a:focus {
     text-decoration: none !important;
   }
+  .login-form-cliente input::placeholder {
+    color: #FEFAE0;
+  }
+  .login-form-agricultor input::placeholder {
+    color: #283618;
+  }
+  
