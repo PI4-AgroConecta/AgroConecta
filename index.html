@@ -7,7 +7,6 @@
     <title>AgroConecta</title>
   </head>
   <body>
-    <!-- Plugin VLibras deve vir ANTES do React -->
     <div vw class="enabled">
       <div vw-access-button class="active"></div>
       <div vw-plugin-wrapper>
@@ -19,8 +18,6 @@
     <script>
       new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
-
-    <!-- React renderiza aqui -->
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
