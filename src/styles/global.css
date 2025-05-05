@@ -296,7 +296,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* Reaproveita o estilo de .button-container já existente */
+
 .botao-abrir-fazenda {
   display: inline-flex;
   align-items: center;
@@ -369,4 +369,10 @@ body {
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
   margin-bottom: 56PX;
+}
+#vlibras {
+  position: fixed; /* O widget ficará fixo na tela */
+  bottom: 10px; /* Colocando o widget no canto inferior */
+  right: 10px; /* Colocando o widget no canto direito */
+  z-index: 1000; /* Para garantir que o widget fique acima de outros elementos */
 }
