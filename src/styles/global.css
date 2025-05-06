@@ -14,8 +14,10 @@ body {
   padding: 0;
   font-family: 'Montserrat', sans-serif;
   background-color: #FEFAE0;
-  overflow-x: hidden; /* Elimina scroll horizontal */
+  overflow-x: auto;  
+  overflow-y: scroll;  
 }
+
 
 .main-header {
   width: 100%;
@@ -189,19 +191,19 @@ body {
   }
   
   label[for="s1"] {
-    background-image: url('./imagens/imgS1.jpeg');
+    background-image: url('./img/imgS1.jpeg');
   }
   
   label[for="s2"] {
-    background-image: url('./imagens/imgS2.jpeg');
+    background-image: url('./img/imgS2.jpeg');
   }
   
   label[for="s3"] {
-    background-image: url('./imagens/imgS3.jpeg');
+    background-image: url('./img/imgS3.jpeg');
   }
   
   label[for="s4"] {
-    background-image: url('./imagens/imgS4.jpeg');
+    background-image: url('./img/imgS4.jpeg');
   }
 
 .secao-fazendas {
@@ -259,7 +261,7 @@ body {
   width: 100%;
   height: 280px;
   position: relative;
-  background-image: url('imagens/Capa.png'); /* Substitua pelo caminho da imagem desejada */
+  background-image: url('img/Capa.png'); /* Substitua pelo caminho da imagem desejada */
   background-size: cover;
   background-position: center;
   display: flex;
@@ -375,4 +377,57 @@ body {
   bottom: 10px; 
   right: 10px;
   z-index: 1000; 
+}
+/* Modo contraste: fundo preto, texto branco */
+.modo-contraste {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.modo-contraste a,
+.modo-contraste h1,
+.modo-contraste h2,
+.modo-contraste h3,
+.modo-contraste h4,
+.modo-contraste h5,
+.modo-contraste h6,
+.modo-contraste p,
+.modo-contraste span,
+.modo-contraste label,
+.modo-contraste input,
+.modo-contraste button {
+  color: #fff !important;
+  background-color: #000 !important;
+  border-color: #fff !important;
+}
+
+/* Ajuste para botões ou campos que devem manter acessibilidade */
+.modo-contraste button {
+  border: 1px solid #fff;
+}
+
+.modo-contraste {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.modo-contraste input,
+.modo-contraste select,
+.modo-contraste textarea,
+.modo-contraste button {
+  background-color: #000 !important;
+  color: #fff !important;
+  border: 1px solid #fff !important;
+}
+
+.modo-contraste ::placeholder {
+  color: #ccc !important;
+}
+
+.modo-contraste .mensagem-erro,
+.modo-contraste .mensagem-alerta,
+.modo-contraste .mensagem-sucesso {
+  color: #fff !important;
+  background-color: #222 !important;
+  border: 1px solid #fff !important;
 }
