@@ -1,4 +1,3 @@
-*,
 *::before,
 *::after {
   margin: 0;
@@ -6,11 +5,10 @@
   box-sizing: border-box;
 }
 
-
 .cadastro-page {
   display: flex;
-  align-items: center;      
-  justify-content: center;  
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
   background: url('/img/FotoCadastro.jpg') center/cover no-repeat;
   font-family: 'Montserrat', sans-serif;
@@ -24,14 +22,13 @@
   width: 90%;
   background: #FEFAE0;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   color: #283618;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 
 .cadastro-logo {
   width: 140px;
@@ -91,6 +88,11 @@
   background-color: #3c4a28;
 }
 
+.cadastro-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
 /* Responsividade */
 @media (max-width: 600px) {
   .cadastro-main {
@@ -109,6 +111,7 @@
     font-size: 0.9rem;
   }
 }
+
 .icones-perfil {
   display: flex;
   justify-content: center;
@@ -119,4 +122,44 @@
 .icone-perfil {
   width: 100px;
   height: 100px;
+}
+
+/* Estilos para os requisitos da senha */
+.senha-requisitos {
+  text-align: left;
+
+  border-radius: 6px;
+}
+
+.senha-titulo {
+  font-size: 1rem;
+  color: #283618;
+  margin-bottom: 10px;
+}
+
+.senha-lista {
+  list-style: none;
+  padding-left: 0;
+}
+
+.senha-lista li {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.senha-lista .valido {
+  color: green;
+}
+
+.senha-lista .invalido {
+  color: red;
+}
+
+
+.senha-lista li {
+  transition: color 0.3s ease;
 }
