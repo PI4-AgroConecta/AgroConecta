@@ -231,7 +231,6 @@
   #btn-agricultor {
     background-color: var(--cor-agricultor-texto);
     color: var(--cor-agricultor-fundo);
-    cursor: not-allowed;
     opacity: 0.8;
   }
   

@@ -163,3 +163,43 @@
 .senha-lista li {
   transition: color 0.3s ease;
 }
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.popup {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.popup h2 {
+  margin-bottom: 20px;
+  color: #283618;
+}
+
+.popup-button {
+  padding: 10px 20px;
+  background-color: #283618;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.popup-button:hover {
+  background-color: #4a5c2a;
+}

@@ -5,8 +5,10 @@ import '../styles/Login.css';
 const LoginAgricultor = () => {
   const navigate = useNavigate();
 
+  // Função de envio do formulário
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Navega para a página principal do agricultor
     navigate('/tela-principal');
   };
 
@@ -34,11 +36,11 @@ const LoginAgricultor = () => {
             required
           />
 
-          <button type="submit"id="btn-agricultor" >ENTRAR</button>
+          <button type="submit" id="btn-agricultor">ENTRAR</button>
         </form>
 
         <div className="links-agricultor">
-          <Link to="/cadastro" >Cadastre-se</Link>
+          <Link to="/cadastro">Cadastre-se</Link>
           <span> | </span>
           <Link to="/esqueci-senha">Esqueci minha senha</Link>
         </div>

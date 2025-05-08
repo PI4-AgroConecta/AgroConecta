@@ -7,6 +7,7 @@ import LoginCliente from './components/LoginCliente';
 import LoginAgricultor from './components/LoginAgricultor';
 import Cadastro from './components/Cadastro';
 import EsqueciSenha from './components/EsqueciSenha';
+import RedefinirSenha from './components/RedefinirSenha'; // ✅ Importação adicionada
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/login-agricultor" element={<LoginAgricultor />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/esqueci-senha" element={<EsqueciSenha />} />
+        <Route path="/redefinir-senha" element={<RedefinirSenha />} /> {/* ✅ Nova rota adicionada */}
       </Routes>
     </Router>
   );
