@@ -1,0 +1,20 @@
+.reservas {
+    padding: 20px;
+  }
+  
+  .reservas section {
+    margin-top: 20px;
+  }
+  
+  .reservas ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .reservas li {
+    background: #f0f0f0;
+    margin-bottom: 8px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  

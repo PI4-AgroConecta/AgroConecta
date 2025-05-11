@@ -1,0 +1,118 @@
+/* Calendário da biblioteca react-calendar */
+.react-calendar {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  border: none;
+}
+
+.react-calendar__navigation {
+  margin-bottom: 1rem; /* Espaço abaixo da navegação */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.react-calendar__navigation button {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.react-calendar__navigation button:hover {
+  background-color: #f0f0f0;
+}
+
+.react-calendar__month-view__weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* Uma coluna para cada dia */
+  text-align: center;
+  margin-bottom: 0.5rem;
+  padding: 0 0.5rem;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #555;
+  padding: 0.25rem 0;
+}
+
+.react-calendar__tile {
+  padding: 10px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.react-calendar__tile--active,
+.react-calendar__tile--now {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+}
+
+
+.react-calendar__tile:hover {
+  background-color: #8ece90;
+}
+
+.horarios-title {
+  display: flex;
+  gap: 3%;
+}
+
+.horarios {
+    padding: 20px;
+  }
+
+  .horarios h1{
+    margin-bottom: 3%;
+  }
+  
+  .dias-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  
+  .dia-bloco {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+  }
+  
+  .horas-container {
+    display: flex;
+    width: 120px;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+  }
+  
+  .horario {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+  }
+  
+  .horario:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .horario.selecionado {
+    background-color: #4caf50;
+    color: white;
+    border-color: #4caf50;
+  }
+  

@@ -1,0 +1,88 @@
+.map-page {
+  padding: 1rem;
+}
+
+.map-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 3rem;
+}
+
+.map-layout {
+  display: flex;
+  gap: 20px;
+  margin-top: 2rem;
+}
+
+.filters-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 280px;  /* Largura fixa para o painel */
+  margin-bottom: 20px;
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-item label {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.range-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  background: #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+
+.range-slider:focus {
+  background: #3b82f6;
+}
+
+.filter-item input[type="number"] {
+  margin-top: 10px;
+  padding: 5px;
+  width: 60px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.custom-select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  color: #555;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.custom-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.map-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.map-container {
+  height: 83vh; /* Ajusta a altura do mapa */
+  width: calc(100% - 320px); /* O mapa ocupa o restante da tela após o painel de filtros */
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}

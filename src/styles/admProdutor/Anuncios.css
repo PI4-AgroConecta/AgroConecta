@@ -1,0 +1,105 @@
+.adicionar-produto-container {
+    padding: 2rem;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .form-conteiner {
+    border-style: solid;
+    border-color: #bebdbd;
+    border-radius: 12px;
+    border-width: 1px;
+    margin-top: 2%;
+  }
+
+  .div-externa {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    padding-bottom: 0;
+  }
+  
+  .imagem-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .imagem-preview img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  .imagem-placeholder {
+    width: 200px;
+    height: 200px;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .input-image {
+    box-shadow: none;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: #bebdbd;
+    width: 20rem;
+  }
+
+  .form-campos {
+    display: flex;
+    gap: 1rem;
+    min-width: 250px;
+    flex: 1;
+    margin-left: 5%;
+  }
+  
+  .form-campos label {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.95rem;
+    color: #333;
+    margin-bottom: 5%;
+  }
+  
+  .form-campos input,
+  .form-campos select {
+    padding: 0.5rem;
+    width: 15rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-shadow: none;
+    background-color: white;
+    margin-top: 2%;
+  }
+  
+  .quantidade-volume {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  button[type="submit"] {
+    padding: 0.7rem;
+    width: 15rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 41rem;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45a045;
+  }
+  
