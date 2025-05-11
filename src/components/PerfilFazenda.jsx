@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import capaImg from './../images/hortaDonaClaraCapa.png';
 import perfilImg from './../images/hortaDonaClara.png';
+import usuarioImg from './../../public/img/cliente1.png';
 import imgLocal1 from './../images/hortaDonaClaraLocal.png';
 import imgLocal2 from './../images/hortaDonaClaraLocal2.png';
 import imgLocal3 from './../images/hortaDonaClaraLocal3.png';
@@ -10,6 +11,7 @@ import imgLocal4 from './../images/hortaDonaClaraLocal4.png';
 
 const PerfilFazenda = () => {
   const [showPopup, setShowPopup] = useState(false);
+  const [showMenuModal, setShowMenuModal] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,6 +23,20 @@ const PerfilFazenda = () => {
 
   return (
     <div className="perfil-container">
+
+    <button className="menu-button" onClick={() => setShowMenuModal(true)}>☰</button>
+    {showMenuModal && (
+      <div className="modal-overlay" onClick={() => setShowMenuModal(false)}>
+        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <button className="close-button" onClick={() => setShowMenuModal(false)}>X</button>
+          <nav className="modal-nav">
+            <a href="/">Meu Perfil</a>
+            <a href="/">Reservas</a>
+          </nav>
+        </div>
+      </div>
+    )}
+
       <header className="main-header">
       <a href="/tela-principal">
         <img src="/img/Logo1.png" alt="Logo" className="logo" />
@@ -117,7 +133,30 @@ const PerfilFazenda = () => {
               <img className="foto-item-local" src={imgLocal2} alt="" />
               <img className="foto-item-local" src={imgLocal3} alt="" />
               <img className="foto-item-local" src={imgLocal4} alt="" />
-              <div className="foto-item">+</div>
+            </div>
+          </div>
+
+          <div className="carrossel-produtos fotos-local">
+            <h3>Galeria de Fotos</h3>
+            <div className="carrossel-container">
+              {[1, 2, 3, 4].map((item) => (
+                <div className="produto-card" key={item}>
+                  <img className="foto-item-local" src={imgLocal4} alt="" />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="carrossel-produtos">
+            <h3>Avaliações</h3>
+            <div className="carrossel-container">
+              {[1, 2, 3, 4].map((item) => (
+                <div className="produto-card" key={item}>
+                  <img src={usuarioImg} alt='foto-usuario' className="img-avaliacao" />
+                  <h4 className='title-avaliacao'>Usuário</h4>
+                  <p className='p-avaliacao'>Produtor responsável com exelentes produtos. Recomendo a todos!</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

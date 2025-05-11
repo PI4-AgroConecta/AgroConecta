@@ -87,7 +87,7 @@
     flex-wrap: wrap;
   }
   
-  button[type="submit"] {
+  .button-anuncio {
     padding: 0.7rem;
     width: 15rem;
     background-color: #4CAF50;
@@ -99,7 +99,7 @@
     margin-left: 41rem;
   }
   
-  button[type="submit"]:hover {
+  .button-anuncio:hover {
     background-color: #45a045;
   }
   

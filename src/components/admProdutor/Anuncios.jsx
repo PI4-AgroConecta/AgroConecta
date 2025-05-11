@@ -132,7 +132,7 @@ const Anuncios = () => {
             </div>
           </div>
 
-          <button type="submit">Publicar Anúncio</button>
+          <button className='button-anuncio' type="submit">Publicar Anúncio</button>
         </form>
       </div>
     </div>
