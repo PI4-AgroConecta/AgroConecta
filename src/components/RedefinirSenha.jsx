@@ -66,11 +66,11 @@ const RedefinirSenha = () => {
           {erroSenha && <p className="erro-senha">{erroSenha}</p>}
 
           <ul className="senha-requisitos">
-            <li className={senha.length >= 8 ? 'valido' : ''}>Mínimo 8 caracteres</li>
-            <li className={/[A-Z]/.test(senha) ? 'valido' : ''}>Letra maiúscula</li>
-            <li className={/[a-z]/.test(senha) ? 'valido' : ''}>Letra minúscula</li>
-            <li className={/[0-9]/.test(senha) ? 'valido' : ''}>Número</li>
-            <li className={/[!@#$%^&*(),.?":{}|<>]/.test(senha) ? 'valido' : ''}>Caractere especial</li>
+            <li className={senha.length >= 8 ? 'valido' : ''}>* Mínimo 8 caracteres</li>
+            <li className={/[A-Z]/.test(senha) ? 'valido' : ''}>* Letra maiúscula</li>
+            <li className={/[a-z]/.test(senha) ? 'valido' : ''}>* Letra minúscula</li>
+            <li className={/[0-9]/.test(senha) ? 'valido' : ''}>* Número</li>
+            <li className={/[!@#$%^&*(),.?":{}|<>]/.test(senha) ? 'valido' : ''}>* Caractere especial</li>
           </ul>
 
           <button type="submit" className="senha-button" disabled={!podeEnviar}>

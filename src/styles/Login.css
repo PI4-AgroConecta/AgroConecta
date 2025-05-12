@@ -7,8 +7,9 @@
     --input-bg: rgba(255,255,255,0.2);
     --input-bg-focus: rgba(255,255,255,0.3);
     
-    --box-shadow-default: 5px 5px 5px rgba(0,0,0,0.2);
-    --box-shadow-focus: 3px 3px 8px rgba(0,0,0,0.3);
+   --box-shadow-default: 8px 8px 16px rgba(0,0,0,0.3);
+  --box-shadow-focus: 4px 4px 18px rgba(0,0,0,0.5);
+
   }
   
   /* Estilos gerais */
@@ -189,7 +190,7 @@
   input {
     padding: 20px;
     font-size: 16px;
-    border: none;
+     border: 0.5px solid rgba(95, 78, 78, 0.856); 
     border-radius: 10px;
     background-color: var(--input-bg);
     color: inherit;
@@ -286,4 +287,115 @@
   .login-form-agricultor input::placeholder {
     color: #283618;
   }
-  
+  .home-opcoes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Estilo dos botões ou seções */
+.home-opcao {
+  flex: 1;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.home-opcao:hover {
+  transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .home-opcoes {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .home-opcao {
+    width: 100%;
+  }
+}
+.container-home {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: row;
+}
+
+.panel {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.panel-left {
+  background-image: url('/img/SenhorAgricultor.jpeg');
+}
+
+.panel-right {
+  background-image: url('/img/ImagemCliente.jpg');
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+}
+
+.panel-left .overlay {
+  background-color: var(--cor-agricultor-fundo);
+}
+
+.panel-right .overlay {
+  background-color: var(--cor-cliente-fundo);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--cor-agricultor-texto);
+}
+.panel-right .content {
+  color: var(--cor-cliente-texto);
+}
+
+.icon {
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  display: block;
+}
+
+h2 {
+  font-size: 36px;
+  margin-top: 20px;
+  font-weight: 400;
+}
+
+
+@media (max-width: 768px) {
+  .container-home {
+    flex-direction: column;
+  }
+
+  .panel {
+    width: 100%;
+    height: 50vh;
+  }
+}

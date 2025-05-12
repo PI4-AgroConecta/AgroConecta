@@ -50,7 +50,7 @@
   width: 100%;
   padding: 0.75rem;
   font-size: 1rem;
-  border: 1px solid #ccc;
+  border: 0.5px solid rgba(95, 78, 78, 0.856);
   border-radius: 6px;
   color: #283618;
 }
