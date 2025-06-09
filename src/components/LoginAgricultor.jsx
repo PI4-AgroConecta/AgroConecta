@@ -9,7 +9,7 @@ const LoginAgricultor = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Navega para a página principal do agricultor
-    navigate('/tela-principal');
+    navigate('/adm-produtor');
   };
 
   return (

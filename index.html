@@ -5,27 +5,218 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AgroConecta</title>
+    <style>
+      /* --- CSS Variables for Theming --- */
+      :root {
+        /* Default colors */
+        --bg-color: #fff;
+        --text-color: #333;
+        --button-bg: #1f6f3f;
+        --button-text: #fff;
+        --link-color: #000;
+        --input-bg: #fff;
+        --input-border: #ccc;
+        --input-text: #333;
+      }
+
+      body.modo-contraste {
+        /* High Contrast colors */
+        --bg-color: #000;
+        --text-color: #fff;
+        --button-bg: #fff;
+        --button-text: #000;
+        --link-color: #fff;
+        --input-bg: #000;
+        --input-border: #fff;
+        --input-text: #fff;
+      }
+
+      /* --- Base Styles using Variables --- */
+      html {
+        font-size: 100%; /* Base font size, usually 16px */
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        font-size: 1rem; /* 16px base */
+        line-height: 1.5;
+        margin: 0;
+        padding: 0 1rem;
+      }
+
+      /* Headings scaled with rem */
+      h1 {
+        font-size: 2.5rem; /* 40px base */
+        margin: 0.67em 0;
+      }
+      h2 {
+        font-size: 2rem;
+        margin: 0.75em 0;
+      }
+      h3 {
+        font-size: 1.75rem;
+        margin: 0.83em 0;
+      }
+
+      p,
+      label,
+      button,
+      input,
+      select,
+      textarea {
+        font-size: 1rem; /* 16px base */
+      }
+
+      /* Inputs, selects, textarea styling */
+      input,
+      select,
+      textarea {
+        background-color: var(--input-bg);
+        border: 1px solid var(--input-border);
+        color: var(--input-text);
+        padding: 0.5em;
+        border-radius: 4px;
+        font-family: inherit;
+        font-size: 1rem;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+      }
+
+      /* Placeholder styles */
+      ::placeholder {
+        font-size: 1rem;
+        color: #999;
+      }
+
+      body.modo-contraste ::placeholder {
+        color: #ccc;
+      }
+
+      /* Buttons */
+      button {
+        background-color: var(--button-bg);
+        color: var(--button-text);
+        border: none;
+        border-radius: 8px;
+        padding: 0.75em 1.25em;
+        cursor: pointer;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover,
+      button:focus {
+        background-color: #145a2d;
+        outline: none;
+      }
+
+      /* Links */
+      a {
+        color: var(--link-color);
+        text-decoration: underline;
+      }
+
+      a:hover,
+      a:focus {
+        text-decoration: none;
+        outline: none;
+      }
+
+      /* Accessibility buttons fixed */
+      #contraste-button,
+      #acessibilidade-fontes {
+        position: fixed;
+        right: 10px;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      
+      }
+
+      #contraste-button {
+        top: 58%;
+        transform: translateY(-50%);
+      }
+
+      #acessibilidade-fontes {
+        top: 68%;
+        transform: translateY(-50%);
+      }
+
+      #contraste-button button {
+        background: #000;
+        color: #fff;
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 1.25rem;
+      }
+
+      #acessibilidade-fontes button {
+        background: #1f6f3f;
+        color: white;
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 1.25rem;
+      }
+
+      /* Optional: Forced Colors for OS High Contrast */
+      @media (forced-colors: active) {
+        body {
+          background-color: Canvas;
+          color: CanvasText;
+        }
+        button, a, input, select, textarea {
+          background-color: ButtonFace;
+          color: ButtonText;
+          border: 1px solid ButtonText;
+        }
+        a {
+          text-decoration: underline;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Botão de Contraste -->
-    <div id="contraste-button" style="position: fixed; top: 58%; right: 10px; transform: translateY(-50%); z-index: 9999;">
-      <button onclick="alternarContraste()" style="padding: 12px; border-radius: 8px; background: #000; color: #fff; border: none; cursor: pointer;">
-        🌓 
+    <div id="contraste-button">
+      <button onclick="alternarContraste()" aria-label="Alternar modo de alto contraste">
+        🌓
       </button>
     </div>
 
+    <!-- Botões de Acessibilidade de Fonte -->
+    <div id="acessibilidade-fontes" role="group" aria-label="Controle de tamanho da fonte">
+      <button onclick="alterarFonte(1)" aria-label="Aumentar fonte">A+</button>
+      <button onclick="alterarFonte(-1)" aria-label="Diminuir fonte">A−</button>
+    </div>
+
     <!-- VLibras -->
-    <div vw class="enabled">
+    <div vw class="enabled" aria-label="VLibras - Libras virtual">
       <div vw-access-button class="active"></div>
       <div vw-plugin-wrapper>
         <div class="vw-plugin-top-wrapper"></div>
       </div>
     </div>
 
-    <!-- Scripts -->
     <script>
+      // Alterna modo contraste
       function alternarContraste() {
         document.body.classList.toggle('modo-contraste');
+      }
+
+      // Controle tamanho fonte base no root
+      let tamanhoFonteBase = 100; // 100% padrão (16px)
+
+      function alterarFonte(variacao) {
+        tamanhoFonteBase += variacao * 5; // 5% por clique
+        if (tamanhoFonteBase < 70) tamanhoFonteBase = 70; // mínimo 70%
+        if (tamanhoFonteBase > 250) tamanhoFonteBase = 250; // máximo 250%
+        document.documentElement.style.fontSize = tamanhoFonteBase + '%';
       }
     </script>
 
@@ -34,7 +225,6 @@
       new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
 
-    <!-- React mount -->
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

@@ -40,11 +40,10 @@ const comercios = [
 const Maps = () => {
   const [showMenuModal, setShowMenuModal] = useState(false);
   const [showFilterModal, setShowFilterModal] = useState(false);
-
+  const navigate = useNavigate(); // ✅ ADICIONADO AQUI
 
   return (
     <div className="map-page">
-
       <button className="menu-button" onClick={() => setShowMenuModal(true)}>☰</button>
       {showMenuModal && (
         <div className="modal-overlay" onClick={() => setShowMenuModal(false)}>
@@ -61,11 +60,11 @@ const Maps = () => {
       <header className="main-header">
         <img src="/img/Logo1.png" alt="Logo" className="logo" />
         <nav className="nav-buttons">
-          <div className="button-container">
+          <div className="button-container" onClick={() => navigate('/tela-principal')}>
             <div className="button-bg"></div>
-            <div className="button-text">CARRINHO</div>
+            <div className="button-text">HOME</div>
           </div>
-          <div className="button-container">
+          <div className="button-container" onClick={() => navigate('/perfil-cliente')}>
             <div className="button-bg"></div>
             <div className="button-text">PERFIL</div>
           </div>
@@ -101,44 +100,16 @@ const Maps = () => {
 
               <div className="filter-item">
                 <label>Proximidade</label>
-                <input
-                  type="range"
-                  className="range-slider"
-                  min="0"
-                  max="50"
-                  step="1"
-                  defaultValue="10"
-                />
-                <input
-                  type="number"
-                  min="0"
-                  max="50"
-                  defaultValue="10"
-                  className="range-slider"
-                />
+                <input type="range" className="range-slider" min="0" max="50" step="1" defaultValue="10" />
+                <input type="number" min="0" max="50" defaultValue="10" className="range-slider" />
               </div>
 
-              {/* Filtro por Faixa de Preço */}
               <div className="filter-item">
                 <label>Faixa de Preço</label>
-                <input
-                  type="range"
-                  className="range-slider"
-                  min="0"
-                  max="500"
-                  step="1"
-                  defaultValue="100"
-                />
-                <input
-                  type="number"
-                  min="0"
-                  max="500"
-                  defaultValue="100"
-                  className="range-slider"
-                />
+                <input type="range" className="range-slider" min="0" max="500" step="1" defaultValue="100" />
+                <input type="number" min="0" max="500" defaultValue="100" className="range-slider" />
               </div>
 
-              {/* Filtro por Avaliação */}
               <div className="filter-item">
                 <label>Avaliação (Estrelas)</label>
                 <select className="custom-select">
@@ -150,7 +121,6 @@ const Maps = () => {
                 </select>
               </div>
 
-              {/* Filtro por Localização */}
               <div className="filter-item">
                 <label>Localização</label>
                 <select className="custom-select">
@@ -189,44 +159,16 @@ const Maps = () => {
 
           <div className="filter-item">
             <label>Proximidade</label>
-            <input
-              type="range"
-              className="range-slider"
-              min="0"
-              max="50"
-              step="1"
-              defaultValue="10"
-            />
-            <input
-              type="number"
-              min="0"
-              max="50"
-              defaultValue="10"
-              className="range-slider"
-            />
+            <input type="range" className="range-slider" min="0" max="50" step="1" defaultValue="10" />
+            <input type="number" min="0" max="50" defaultValue="10" className="range-slider" />
           </div>
 
-          {/* Filtro por Faixa de Preço */}
           <div className="filter-item">
             <label>Faixa de Preço</label>
-            <input
-              type="range"
-              className="range-slider"
-              min="0"
-              max="500"
-              step="1"
-              defaultValue="100"
-            />
-            <input
-              type="number"
-              min="0"
-              max="500"
-              defaultValue="100"
-              className="range-slider"
-            />
+            <input type="range" className="range-slider" min="0" max="500" step="1" defaultValue="100" />
+            <input type="number" min="0" max="500" defaultValue="100" className="range-slider" />
           </div>
 
-          {/* Filtro por Avaliação */}
           <div className="filter-item">
             <label>Avaliação (Estrelas)</label>
             <select className="custom-select">
@@ -238,7 +180,6 @@ const Maps = () => {
             </select>
           </div>
 
-          {/* Filtro por Localização */}
           <div className="filter-item">
             <label>Localização</label>
             <select className="custom-select">

@@ -57,7 +57,7 @@ const Cadastro = () => {
 
   const fecharPopup = () => {
     setShowPopup(false);
-    navigate('/');
+    navigate('/tela-principal'); // redireciona para TelaPrincipal
   };
 
   return (
@@ -140,7 +140,9 @@ const Cadastro = () => {
         <div className="popup-overlay">
           <div className="popup">
             <h2>Cadastro realizado com sucesso!</h2>
-            <button className="popup-button" onClick={fecharPopup}>OK</button>
+            <button className="popup-button" onClick={fecharPopup}>
+              OK
+            </button>
           </div>
         </div>
       )}

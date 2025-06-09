@@ -1,5 +1,6 @@
 import '../styles/PerfilFazenda.css';
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Importa o useNavigate
 
 import capaImg from './../images/hortaDonaClaraCapa.png';
 import perfilImg from '/img/Perfil-Cliente.jpeg';
@@ -7,6 +8,7 @@ import perfilImg from '/img/Perfil-Cliente.jpeg';
 const PerfilCliente = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [showMenuModal, setShowMenuModal] = useState(false);
+  const navigate = useNavigate(); // Inicializa o hook de navegação
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,6 +16,10 @@ const PerfilCliente = () => {
     setTimeout(() => {
       setShowPopup(false);
     }, 2000);
+  };
+
+  const irParaHome = () => {
+    navigate('/tela-principal'); // Redireciona para a rota da tela principal
   };
 
   return (
@@ -36,14 +42,11 @@ const PerfilCliente = () => {
           <img src="/img/Logo1.png" alt="Logo" className="logo" />
         </a>
         <nav className="nav-buttons">
-          <div className="button-container">
+          <div className="button-container" onClick={irParaHome}>
             <div className="button-bg"></div>
-            <div className="button-text">CARRINHO</div>
+            <div className="button-text">HOME</div>
           </div>
-          <div className="button-container">
-            <div className="button-bg"></div>
-            <div className="button-text">PERFIL</div>
-          </div>
+         
         </nav>
       </header>
 
