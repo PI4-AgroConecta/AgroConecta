@@ -1,7 +1,8 @@
+
 /*CSS DA PAGINA Principal */
 
 /* Reset para garantir consistência entre os navegadores */
-*,
+
 *::before,
 *::after {
   margin: 0;
@@ -299,7 +300,7 @@ label[for="s4"] {
 }
 
 .subtitulo-capa {
-  font-size: 18px;
+  font-size: 23px;
   font-weight: 400;
   margin-bottom: 20px;
 }
@@ -430,4 +431,162 @@ label[for="s4"] {
   color: #fff !important;
   background-color: #222 !important;
   border: 1px solid #fff !important;
+}
+
+.secao-cards-produto {
+  padding: 40px 20px;
+  background-color: #FEFAE0;
+  text-align: center;
+}
+
+.titulo-cards {
+  color: #283618;
+  font-size: 32px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.container-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card-produto {
+  background: #FEFAE0;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  width: 220px;
+  height: 360px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.card-produto:hover {
+  transform: translateY(-5px);
+}
+
+.imagem-produto {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.nome-produto {
+  color: #283618;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.preco-produto {
+  color: #555;
+  font-size: 18.5px;
+  margin-bottom: 70px;
+}
+
+.botao-comprar {
+  background-color: #FEFAE0;
+  color: #283618;
+  border: 2px solid #283618;
+  padding: 10px 0;
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.botao-comprar:hover {
+  background-color: #283618;
+  color: white;
+}
+
+
+
+
+.secao-cards-fazendas {
+  padding: 40px 20px;
+  background-color: #fefae0;
+}
+
+.container-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card-fazenda {
+  background-color: #fefae0;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  width: 220px;
+  height: 360px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.card-fazenda:hover {
+  transform: scale(1.05);
+}
+
+.imagem-fazenda {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.nome-fazenda {
+  color: #283618;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.distancia-fazenda {
+ color: #555;
+  font-size: 18.5px;
+  margin-bottom: 60px;
+}
+
+.botao-visitar {
+ background-color: #FEFAE0;
+  color: #283618;
+  padding: 10px 10px;
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+  margin: 12px auto 0 auto; 
+}
+
+.botao-visitar:hover {
+  background-color: #283618;
+  color: white;
+}
+
+.logout-icon {
+  width: 60px;
+  height: 50px;
+  vertical-align: middle;
+}
+
+.logout-button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout-button:hover .logout-icon {
+  filter: brightness(1000%) invert(100%);
 }
