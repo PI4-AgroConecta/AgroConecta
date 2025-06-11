@@ -11,7 +11,8 @@ import RedefinirSenha from './components/RedefinirSenha';
 import Maps from './components/Maps';
 import AdmProdutor from './components/AdmProdutor';
 import PerfilFazenda from './components/PerfilFazenda';
-import PerfilCliente from './components/PerfilCliente'; // ✅ Importação adicionada
+import PerfilCliente from './components/PerfilCliente';
+import ProdutoDetalhado from './components/ProdutoDetalhado'; 
 
 function App() {
   return (
@@ -27,7 +28,8 @@ function App() {
         <Route path="/maps" element={<Maps />} />
         <Route path="/adm-produtor" element={<AdmProdutor />} />
         <Route path="/perfil-fazenda" element={<PerfilFazenda />} />
-        <Route path="/perfil-cliente" element={<PerfilCliente />} /> {/* ✅ Nova rota adicionada */}
+        <Route path="/perfil-cliente" element={<PerfilCliente />} />
+        <Route path="/produto-detalhado" element={<ProdutoDetalhado />} />
       </Routes>
     </Router>
   );

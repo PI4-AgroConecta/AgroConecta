@@ -3,7 +3,6 @@ import { useState } from "react";
 
 import capaImg from './../images/hortaDonaClaraCapa.png';
 import perfilImg from './../images/hortaDonaClara.png';
-import usuarioImg from './../../public/img/cliente1.png';
 import imgLocal1 from './../images/hortaDonaClaraLocal.png';
 import imgLocal2 from './../images/hortaDonaClaraLocal2.png';
 import imgLocal3 from './../images/hortaDonaClaraLocal3.png';
@@ -24,23 +23,23 @@ const PerfilFazenda = () => {
   return (
     <div className="perfil-container">
 
-    <button className="menu-button" onClick={() => setShowMenuModal(true)}>☰</button>
-    {showMenuModal && (
-      <div className="modal-overlay" onClick={() => setShowMenuModal(false)}>
-        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-          <button className="close-button" onClick={() => setShowMenuModal(false)}>X</button>
-          <nav className="modal-nav">
-            <a href="/">Meu Perfil</a>
-            <a href="/">Reservas</a>
-          </nav>
+      <button className="menu-button" onClick={() => setShowMenuModal(true)}>☰</button>
+      {showMenuModal && (
+        <div className="modal-overlay" onClick={() => setShowMenuModal(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-button" onClick={() => setShowMenuModal(false)}>X</button>
+            <nav className="modal-nav">
+              <a href="/">Meu Perfil</a>
+              <a href="/">Reservas</a>
+            </nav>
+          </div>
         </div>
-      </div>
-    )}
+      )}
 
       <header className="main-header">
-      <a href="/tela-principal">
-        <img src="/img/Logo1.png" alt="Logo" className="logo" />
-      </a>
+        <a href="/tela-principal">
+          <img src="/img/Logo1.png" alt="Logo" className="logo" />
+        </a>
         <nav className="nav-buttons">
           <div className="button-container">
             <div className="button-bg"></div>
@@ -109,57 +108,58 @@ const PerfilFazenda = () => {
             </div>
           </form>
 
-        <div className='div-esquerda'>
-          {/* Carrossel de Produtos à Venda */}
-          <div className="carrossel-produtos">
-            <h3>Produtos à Venda</h3>
-            <div className="carrossel-container">
-              {[1, 2, 3, 4, 5].map((item) => (
-                <div className="produto-card" key={item}>
-                  <img src={imgLocal1} alt={`Produto ${item}`} className="produto-img" />
-                  <h4>Produto {item}</h4>
-                  <p>R$ 15,00</p>
-                  <a href="#" className="btn-ver">Ver mais</a>
-                </div>
-              ))}
+          <div className='div-esquerda'>
+            {/* Carrossel de Produtos à Venda */}
+            <div className="carrossel-produtos">
+              <h3>Produtos à Venda</h3>
+              <div className="carrossel-container">
+                {[1, 2, 3, 4, 5].map((item) => (
+                  <div className="produto-card" key={item}>
+                    <img src={imgLocal1} alt={`Produto ${item}`} className="produto-img" />
+                    <h4>Produto {item}</h4>
+                    <p>R$ 15,00</p>
+                    <a href="#" className="btn-ver">Ver mais</a>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
 
-          {/* Galeria de fotos do local */}
-          <div className="galeria-fotos">
-          <h3>Galeria de Fotos</h3>
-            <div className="fotos-grid">
-              <img className="foto-item-local" src={imgLocal1} alt="" />
-              <img className="foto-item-local" src={imgLocal2} alt="" />
-              <img className="foto-item-local" src={imgLocal3} alt="" />
-              <img className="foto-item-local" src={imgLocal4} alt="" />
+            {/* Galeria de fotos do local */}
+            <div className="galeria-fotos">
+              <h3>Galeria de Fotos</h3>
+              <div className="fotos-grid">
+                <img className="foto-item-local" src={imgLocal1} alt="" />
+                <img className="foto-item-local" src={imgLocal2} alt="" />
+                <img className="foto-item-local" src={imgLocal3} alt="" />
+                <img className="foto-item-local" src={imgLocal4} alt="" />
+              </div>
             </div>
-          </div>
 
-          <div className="carrossel-produtos fotos-local">
-            <h3>Galeria de Fotos</h3>
-            <div className="carrossel-container">
-              {[1, 2, 3, 4].map((item) => (
-                <div className="produto-card" key={item}>
-                  <img className="foto-item-local" src={imgLocal4} alt="" />
-                </div>
-              ))}
+            <div className="carrossel-produtos fotos-local">
+              <h3>Galeria de Fotos</h3>
+              <div className="carrossel-container">
+                {[1, 2, 3, 4].map((item) => (
+                  <div className="produto-card" key={item}>
+                    <img className="foto-item-local" src={imgLocal4} alt="" />
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
 
-          <div className="carrossel-produtos">
-            <h3>Avaliações</h3>
-            <div className="carrossel-container">
-              {[1, 2, 3, 4].map((item) => (
-                <div className="produto-card" key={item}>
-                  <img src={usuarioImg} alt='foto-usuario' className="img-avaliacao" />
-                  <h4 className='title-avaliacao'>Usuário</h4>
-                  <p className='p-avaliacao'>Produtor responsável com exelentes produtos. Recomendo a todos!</p>
-                </div>
-              ))}
+            <div className="carrossel-produtos">
+              <h3>Avaliações</h3>
+              <div className="carrossel-container">
+                {[1, 2, 3, 4].map((item) => (
+                  <div className="produto-card" key={item}>
+                    {/* Aqui usa a URL direta da imagem no public */}
+                    <img src="/img/cliente1.png" alt='foto-usuario' className="img-avaliacao" />
+                    <h4 className='title-avaliacao'>Usuário</h4>
+                    <p className='p-avaliacao'>Produtor responsável com excelentes produtos. Recomendo a todos!</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
 
         </div>
       </div>

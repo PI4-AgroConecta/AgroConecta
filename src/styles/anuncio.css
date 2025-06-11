@@ -1,0 +1,212 @@
+/* src/styles/anuncio.css */
+/* — escopo produto detalhado — */
+.produto-detalhado {
+  background-color: #FEFAE0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.produto-detalhado-container {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+.produto-imagem {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+}
+.imagem-detalhada {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.produto-info {
+  flex: 1 1 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.titulo-produto {
+  font-size: 2.2rem;
+  color: #283618;
+}
+.descricao-produto {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* seleção de peso */
+.peso-selector h4 {
+  margin-bottom: 0.5rem;
+  color: #283618;
+}
+.opcoes-peso {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.peso-opcao {
+  position: relative;
+  padding: 0.6rem 1rem;
+  border: 2px solid #283618;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+.peso-opcao input {
+  display: none;
+}
+.peso-opcao:hover,
+.peso-opcao.ativo {
+  background: #283618;
+  color: #FEFAE0;
+}
+.custom-peso-input {
+  margin-top: 0.5rem;
+}
+.custom-peso-input input {
+  width: 100px;
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+/* seleção de horário */
+.horario-selector h4 {
+  margin-top: 1.5rem;
+  color: #283618;
+}
+.opcoes-horario {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* botão Confirmar */
+.botao-confirmar {
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #283618;
+  color: #FEFAE0;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.botao-confirmar:hover {
+  background-color: #1f2f1a;
+}
+
+/* seção de retirada */
+.retirada-info {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.retirada-info h3 {
+  margin-bottom: 1rem;
+  color: #283618;
+}
+.retirada-info > div {
+  margin-bottom: 1.5rem;
+}
+.retirada-info h4 {
+  margin-bottom: 0.5rem;
+  color: #283618;
+}
+.retirada-info ul {
+  list-style: disc inside;
+}
+.obs-pagamento {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+  font-style: italic;
+}
+
+/* popup de confirmação */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-box {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+.modal-box h3 {
+  margin-bottom: 1rem;
+  color: #283618;
+}
+.modal-box p {
+  margin-bottom: 1.5rem;
+  color: #444;
+}
+
+/* navbar e footer */
+.main-header,
+.main-footer {
+  width: 100%;
+  background-color: #FEFAE0;
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1.5rem;
+}
+.main-header .logo,
+.main-footer .logo {
+  height: 50px;
+  cursor: pointer;
+}
+.nav-buttons {
+  margin-left: auto;
+  display: flex;
+  gap: 1rem;
+}
+.button-container {
+  position: relative;
+  cursor: pointer;
+}
+.button-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #FEFAE0;
+  border-radius: 1rem;
+  z-index: -1;
+  transition: background 0.3s;
+}
+.button-text {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  color: #283618;
+}
+.button-container:hover .button-bg {
+  background: #283618;
+}
+.button-container:hover .button-text {
+  color: #FEFAE0;
+}
+.logout-button .button-text {
+  color: #b00;
+}
+.main-footer {
+  background-color: #283618;
+  justify-content: center;
+  margin-top: auto;
+}
